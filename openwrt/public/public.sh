@@ -32,9 +32,9 @@ sed -i "s/192.168.1.1/$lan_ip/g" package/base-files/files/bin/config_generate
 echo "修改时区"
 sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" package/base-files/files/bin/config_generate
 
-echo '添加主题argon-light和含主题passwall备份包'
-git clone $passwall_url package/laohu
-echo 'CONFIG_PACKAGE_luci-theme-argon-light-mod=y' >> .config
+#echo '添加主题argon-light和含主题passwall备份包'
+#git clone $passwall_url package/laohu
+#echo 'CONFIG_PACKAGE_luci-theme-argon-light-mod=y' >> .config
 
 echo "修改默认主题"
 sed -i "s/bootstrap/$default_theme/g" feeds/luci/collections/luci/Makefile
@@ -43,9 +43,9 @@ echo '添加主题argon'
 git clone $theme_argon package/lean/luci-theme-argon-mc
 echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
 
-echo '添加luci-app-smartdns'
-git clone -b lede $smartdnsapp_url feeds/luci/applications/luci-app-smartdns
-echo 'CONFIG_PACKAGE_luci-app-smartdns=y' >> .config
+#echo '添加luci-app-smartdns'
+#git clone -b lede $smartdnsapp_url feeds/luci/applications/luci-app-smartdns
+#echo 'CONFIG_PACKAGE_luci-app-smartdns=y' >> .config
 
 echo '添加smartdns'
 git clone $smartdns_url package/net/smartdns
@@ -58,8 +58,8 @@ echo 'CONFIG_PACKAGE_smartdns=y' >> .config
 #echo 'CONFIG_PACKAGE_luci-app-openclash=y' >> .config
 #echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y'  >> .config
 
-echo '添加Lienol包'
-git clone $lienol_url package/Lienol
+#echo '添加Lienol包'
+#git clone $lienol_url package/Lienol
 
 echo '添加Passwall'
 git clone $passwall_url package/laohu
@@ -87,12 +87,12 @@ echo 'CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y'  >> .config
 # echo 'CONFIG_PACKAGE_luci-app-vssr=y' >> .config
 # echo 'CONFIG_PACKAGE_luci-i18n-vssr-zh-cn=y'  >> .config
 
-echo '添加OpenAppFilter过滤器'
-git clone $filter_url package/OpenAppFilter
-echo 'CONFIG_PACKAGE_luci-app-oaf=y' >> .config
-echo 'CONFIG_PACKAGE_kmod-oaf=y' >> .config
-echo 'CONFIG_PACKAGE_appfilter=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=y'  >> .config
+#echo '添加OpenAppFilter过滤器'
+#git clone $filter_url package/OpenAppFilter
+#echo 'CONFIG_PACKAGE_luci-app-oaf=y' >> .config
+#echo 'CONFIG_PACKAGE_kmod-oaf=y' >> .config
+#echo 'CONFIG_PACKAGE_appfilter=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=y'  >> .config
 
 # echo '添加Leo-Jo-My的Hello World,并且使用默认包配置'
 # git clone $vssr_plus_rely package/lean/luci-vssr-plus-rely
