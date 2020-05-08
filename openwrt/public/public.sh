@@ -16,7 +16,7 @@ vssr_plus_rely='https://github.com/Leo-Jo-My/my.git'             # vssr_plus 依
 vssr_plus='https://github.com/Leo-Jo-My/luci-app-vssr-plus.git'  # vssr_plus 地址
 filter_url='https://github.com/destan19/OpenAppFilter.git'       # AppFilter 地址
 smartdns_url='https://github.com/pymumu/openwrt-smartdns'
-lucismartdns_url='https://github.com/pymumu/luci-app-smartdns/tree/lede'
+lucismartdns_url='https://github.com/pymumu/luci-app-smartdns.git'
 passwall_url='https://github.com/hfy166/Lienol-openwrt-packages-backup'
 
 # 命令
@@ -94,7 +94,7 @@ echo '添加smartdns'
 git clone $smartdns_url package/net/smartdns
 git clone $lucismartdns_url package/lean/luci-app-smartdns
 echo 'CONFIG_PACKAGE_luci-app-smartdns=y' >> .config
-echo 'CONFIG_PACKAGE_smartdnsr=y' >> .config
+echo 'CONFIG_PACKAGE_smartdns=y' >> .config
 
 # echo '添加Leo-Jo-My的Hello World,并且使用默认包配置'
 # git clone $vssr_plus_rely package/lean/luci-vssr-plus-rely
