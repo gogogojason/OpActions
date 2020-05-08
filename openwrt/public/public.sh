@@ -44,11 +44,11 @@ git clone $theme_argon package/lean/luci-theme-argon-mc
 echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
 
 echo '添加luci-app-smartdns'
-git clone -b lede $smartdnsapp_url feeds/luci/applications/luci-app-smartdns/
+git clone -b lede $smartdnsapp_url package/lean/luci-app-smartdns/
 echo 'CONFIG_PACKAGE_luci-app-smartdns=y' >> .config
 
 echo '添加smartdns'
-git clone $smartdns_url feeds/packages/net/smartdns/
+git clone $smartdns_url package/net/smartdns/
 echo 'CONFIG_PACKAGE_smartdns=y' >> .config
 
 #echo '添加OpenClash'
