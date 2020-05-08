@@ -75,6 +75,7 @@ jobs:
           chmod +x ./$T_NAME.sh
           sudo ./$T_NAME.sh
         fi 
+        ./scripts/feeds update -a
         ./scripts/feeds install -a
         
     - name: SSH connection to Actions
