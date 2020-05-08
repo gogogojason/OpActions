@@ -18,6 +18,7 @@ on:
 env:
   T_NAME: "RM2100"                     # 设备名字 (op编译慢所以直接单个的编译)
   BASE_PATH: openwrt                   # 基础目录
+  FEEDS_CONF: feeds.conf.default:  
   PUBLIC_PATH: public                  # 公共目录
   PUBLIC_SH: public.sh                 # 公共执行文件
   SSH_ACTIONS: true  
@@ -52,6 +53,9 @@ jobs:
     - name: Clone Code                      # 3.拷贝代码
       run: |
         git clone --depth=1 $CLONE_URL -b $CLONE_BRANCH $WORK_PATH
+   - name: Load custom feeds
+      run: | 
+        mv $FEEDS_CONF $WORK_PATH/feeds.conf.default
 
     - name: Update Feeds                    # 4.下载Feeds
       run: |
@@ -72,9 +76,8 @@ jobs:
           echo "执行${T_NAME}sh"
           chmod +x ./$T_NAME.sh
           sudo ./$T_NAME.sh
-        fi
+        fi 
         ./scripts/feeds install -a
-        ./scripts/feeds install luci -a
         
     - name: SSH connection to Actions
       uses: P3TERX/debugger-action@master
