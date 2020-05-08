@@ -17,6 +17,7 @@ vssr_plus='https://github.com/Leo-Jo-My/luci-app-vssr-plus.git'  # vssr_plus 地
 filter_url='https://github.com/destan19/OpenAppFilter.git'       # AppFilter 地址
 samrtdns_url='https://github.com/pymumu/openwrt-smartdns'
 lucisamrtdns_url='https://github.com/pymumu/luci-app-smartdns'
+passwall_url='https://github.com/hfy166/Lienol-openwrt-packages-backup'
 
 # 命令
 # echo "修改机器名称"
@@ -57,6 +58,7 @@ echo '添加Lienol包'
 git clone $lienol_url package/Lienol
 
 echo '添加Passwall'
+git clone $passwall_url package/laohu
 echo 'CONFIG_PACKAGE_luci-app-passwall=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y' >> .config
@@ -90,7 +92,7 @@ echo 'CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=y'  >> .config
 
 echo '添加smartdns'
 git clone $samrtdns_url package/net/smartdns
-git clone $lucisamrtdns_url package/luci-app-smartdns
+git clone $lucisamrtdns_url package/lean/luci-app-smartdns
 echo 'CONFIG_PACKAGE_luci-app-smartdns=y' >> .config
 echo 'CONFIG_PACKAGE_smartdnsr=y' >> .config
 
