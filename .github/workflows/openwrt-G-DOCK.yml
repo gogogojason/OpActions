@@ -52,13 +52,11 @@ jobs:
         sudo timedatectl set-timezone 'Asia/Shanghai'  # 设置时区
     - name: Clone Code                      # 3.拷贝代码
       run: |
-        git clone --depth=1 $CLONE_URL -b $CLONE_BRANCH $WORK_PATH
-   - name: Load custom feeds
-      run: | 
-        mv $FEEDS_CONF $WORK_PATH/feeds.conf.default
+        git clone --depth=1 $CLONE_URL -b $CLONE_BRANCH $WORK_PATH       
 
     - name: Update Feeds                    # 4.下载Feeds
       run: |
+        mv $FEEDS_CONF $WORK_PATH/feeds.conf.default
         cd $WORK_PATH
         ./scripts/feeds update -a
 
