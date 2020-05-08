@@ -18,7 +18,7 @@ on:
 env:
   T_NAME: "RM2100"                     # 设备名字 (op编译慢所以直接单个的编译)
   BASE_PATH: openwrt                   # 基础目录
-  FEEDS_CONF: feeds.conf.default:  
+  FEEDS_CONF: feeds.conf.default 
   PUBLIC_PATH: public                  # 公共目录
   PUBLIC_SH: public.sh                 # 公共执行文件
   SSH_ACTIONS: true  
