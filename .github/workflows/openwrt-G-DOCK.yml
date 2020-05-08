@@ -74,6 +74,7 @@ jobs:
           sudo ./$T_NAME.sh
         fi
         ./scripts/feeds install -a
+        ./scripts/feeds install luci -a
         
     - name: SSH connection to Actions
       uses: P3TERX/debugger-action@master
