@@ -15,6 +15,9 @@ vssr_url='https://github.com/jerrykuku/luci-app-vssr.git'        # vssr地址
 vssr_plus_rely='https://github.com/Leo-Jo-My/my.git'             # vssr_plus 依赖
 vssr_plus='https://github.com/Leo-Jo-My/luci-app-vssr-plus.git'  # vssr_plus 地址
 filter_url='https://github.com/destan19/OpenAppFilter.git'       # AppFilter 地址
+samrtdns_url='https://github.com/pymumu/openwrt-smartdns'
+lucisamrtdns_url='https://github.com/pymumu/luci-app-smartdns'
+
 # 命令
 # echo "修改机器名称"
 # sed -i "s/OpenWrt/$device_name/g" package/base-files/files/bin/config_generate
@@ -43,12 +46,12 @@ echo '添加主题argon'
 git clone $theme_argon package/lean/luci-theme-argon-mc
 echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
 
-echo '添加OpenClash'
-git clone $openClash_url package/lean/luci-app-openclash
+#echo '添加OpenClash'
+#git clone $openClash_url package/lean/luci-app-openclash
 
 #  OpenClash
-echo 'CONFIG_PACKAGE_luci-app-openclash=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y'  >> .config
+#echo 'CONFIG_PACKAGE_luci-app-openclash=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y'  >> .config
 
 echo '添加Lienol包'
 git clone $lienol_url package/Lienol
@@ -63,9 +66,9 @@ echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y' >> .config
 echo 'CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y'  >> .config
 
-echo '添加filebrowser'
-echo 'CONFIG_PACKAGE_luci-app-filebrowser=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y'  >> .config
+#echo '添加filebrowser'
+#echo 'CONFIG_PACKAGE_luci-app-filebrowser=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y'  >> .config
 
 # echo '添加adguardhome'
 # git clone $adguardhome_url package/lean/luci-app-adguardhome
@@ -84,6 +87,12 @@ echo 'CONFIG_PACKAGE_luci-app-oaf=y' >> .config
 echo 'CONFIG_PACKAGE_kmod-oaf=y' >> .config
 echo 'CONFIG_PACKAGE_appfilter=y' >> .config
 echo 'CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=y'  >> .config
+
+echo '添加smartdns'
+git clone $samrtdns_url package/net/smartdns
+git clone $lucisamrtdns_url package/luci-app-smartdns
+echo 'CONFIG_PACKAGE_luci-app-smartdns=y' >> .config
+echo 'CONFIG_PACKAGE_smartdnsr=y' >> .config
 
 # echo '添加Leo-Jo-My的Hello World,并且使用默认包配置'
 # git clone $vssr_plus_rely package/lean/luci-vssr-plus-rely
