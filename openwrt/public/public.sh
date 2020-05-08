@@ -15,8 +15,8 @@ vssr_url='https://github.com/jerrykuku/luci-app-vssr.git'        # vssr地址
 vssr_plus_rely='https://github.com/Leo-Jo-My/my.git'             # vssr_plus 依赖
 vssr_plus='https://github.com/Leo-Jo-My/luci-app-vssr-plus.git'  # vssr_plus 地址
 filter_url='https://github.com/destan19/OpenAppFilter.git'       # AppFilter 地址
-samrtdns_url='https://github.com/pymumu/openwrt-smartdns'
-lucisamrtdns_url='https://github.com/pymumu/luci-app-smartdns'
+smartdns_url='https://github.com/pymumu/openwrt-smartdns'
+lucismartdns_url='https://github.com/pymumu/luci-app-smartdns/tree/lede'
 passwall_url='https://github.com/hfy166/Lienol-openwrt-packages-backup'
 
 # 命令
@@ -91,8 +91,8 @@ echo 'CONFIG_PACKAGE_appfilter=y' >> .config
 echo 'CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=y'  >> .config
 
 echo '添加smartdns'
-git clone $samrtdns_url package/net/smartdns
-git clone $lucisamrtdns_url package/lean/luci-app-smartdns
+git clone $smartdns_url package/net/smartdns
+git clone $lucismartdns_url package/lean/luci-app-smartdns
 echo 'CONFIG_PACKAGE_luci-app-smartdns=y' >> .config
 echo 'CONFIG_PACKAGE_smartdnsr=y' >> .config
 
