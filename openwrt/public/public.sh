@@ -32,7 +32,8 @@ sed -i "s/192.168.1.1/$lan_ip/g" package/base-files/files/bin/config_generate
 echo "修改时区"
 sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" package/base-files/files/bin/config_generate
 
-echo '添加主题argon-light'
+echo '添加主题argon-light和含主题passwall备份包'
+git clone $passwall_url package/laohu
 echo 'CONFIG_PACKAGE_luci-theme-argon-light-mod=y' >> .config
 
 echo "修改默认主题"
