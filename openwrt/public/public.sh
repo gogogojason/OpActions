@@ -37,7 +37,7 @@ sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" packa
 #echo 'CONFIG_PACKAGE_luci-theme-argon-light-mod=y' >> .config
 
 echo "修改默认主题"
-sed -i "s/bootstrap/$default_theme/g" feeds/luci/collections/luci/Makefile
+sed -i 's/+luci-theme-bootstrap/+luci-theme-argon-light-mod/g' feeds/luci/collections/luci/Makefile
 
 echo '添加主题argon'
 git clone $theme_argon package/lean/luci-theme-argon-mc
