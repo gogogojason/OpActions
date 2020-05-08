@@ -4,8 +4,8 @@
 # wifi_name="OpenWrt"       # Wifi 名字 ,放到了单独设备的sh文件中了
 lan_ip='192.168.2.1'        # Lan Ip地址
 utc_name='Asia\/Shanghai'   # 时区
-delete_bootstrap=true       # 是否删除默认主题 true 、false
-default_theme='argon_mc1'   # 默认主题 结合主题文件夹名字
+delete_bootstrap=false       # 是否删除默认主题 true 、false
+default_theme='luci-theme-argon-light-mod'   # 默认主题 结合主题文件夹名字
 theme_argon='https://github.com/sypopo/luci-theme-argon-mc.git'  # 主题地址
 openClash_url='https://github.com/vernesong/OpenClash.git'       # OpenClash包地址
 adguardhome_url='https://github.com/rufengsuixing/luci-app-adguardhome.git' # adguardhome 包地址
