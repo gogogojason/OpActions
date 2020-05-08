@@ -47,6 +47,14 @@ echo '添加主题argon'
 git clone $theme_argon package/lean/luci-theme-argon-mc
 echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
 
+echo '添加luci-app-smartdns'
+git clone $lucismartdns_url feeds/luci/applications/luci-app-smartdns
+echo 'CONFIG_PACKAGE_luci-app-smartdns=y' >> .config
+
+echo '添加smartdns'
+git clone $smartdns_url package/net/smartdns
+echo 'CONFIG_PACKAGE_smartdns=y' >> .config
+
 #echo '添加OpenClash'
 #git clone $openClash_url package/lean/luci-app-openclash
 
@@ -89,14 +97,6 @@ echo 'CONFIG_PACKAGE_luci-app-oaf=y' >> .config
 echo 'CONFIG_PACKAGE_kmod-oaf=y' >> .config
 echo 'CONFIG_PACKAGE_appfilter=y' >> .config
 echo 'CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=y'  >> .config
-
-echo '添加luci-app-smartdns'
-git clone $lucismartdns_url package/lean/luci-app-smartdns
-echo 'CONFIG_PACKAGE_luci-app-smartdns=y' >> .config
-
-echo '添加smartdns'
-git clone $smartdns_url package/net/smartdns
-echo 'CONFIG_PACKAGE_smartdns=y' >> .config
 
 # echo '添加Leo-Jo-My的Hello World,并且使用默认包配置'
 # git clone $vssr_plus_rely package/lean/luci-vssr-plus-rely
