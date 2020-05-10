@@ -30,7 +30,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
     - name: Checkout Master               # 1.导入主分支
@@ -60,10 +60,18 @@ jobs:
         cd $WORK_PATH
         ./scripts/feeds update -a
         
-    - name: rerun-Update Feeds                   
+    - name: download others packges                   
       run: |
+        cd $WORK_PATH
+        git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
+        git clone https://github.com/jerrykuku/luci-app-vssr.git  
         ./scripts/feeds update -a
         
+    - name: Rerun-Update Feeds                   
+      run: |
+        cd $WORK_PATH
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
         
     - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
       run: |
