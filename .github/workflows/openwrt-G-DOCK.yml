@@ -63,9 +63,9 @@ jobs:
     - name: download others packges                   
       run: |
         cd $WORK_PATH
-        git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/ #git lua-maxminddb 依赖
-        git clone https://github.com/jerrykuku/luci-app-vssr.git package/lean/ 
-        git clone https://github.com/tty228/luci-app-serverchan packege/lean/
+        git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxminddb #git lua-maxminddb 依赖
+        git clone https://github.com/jerrykuku/luci-app-vssr.git package/lean/luci-app-vssr 
+        git clone https://github.com/tty228/luci-app-serverchan packege/lean/luci-app-serverchan
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
