@@ -40,10 +40,10 @@ echo "修改默认主题"
 sed -i 's/+luci-theme-bootstrap/+luci-theme-argon-light-mod/g' feeds/luci/collections/luci/Makefile
 
 echo "修改机器名称"
-sed -i "s/OpenWrt/$device_name/g" ./package/base-files/files/bin/config_generate
+sed -i "s/OpenWrt/$device_name/g" /package/base-files/files/bin/config_generate
 
 echo "修改wifi名称"
-sed -i "s/OpenWrt/$wifi_name/g" ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i "s/OpenWrt/$wifi_name/g" /package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 echo '添加主题argon'
 git clone $theme_argon package/lean/luci-theme-argon-mc
