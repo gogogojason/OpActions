@@ -59,7 +59,12 @@ jobs:
         mv $FEEDS_CONF $WORK_PATH/feeds.conf.default
         cd $WORK_PATH
         ./scripts/feeds update -a
-
+        
+    - name: rerun-Update Feeds                   
+      run: |
+        ./scripts/feeds update -a
+        
+        
     - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
       run: |
         [ -f $BASE_PATH/$T_NAME/banner ] && cp -f $BASE_PATH/$T_NAME/banner $WORK_PATH/package/base-files/files/etc/banner
