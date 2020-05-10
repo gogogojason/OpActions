@@ -57,12 +57,10 @@ echo '添加smartdns'
 git clone $smartdns_url feeds/packages/net/smartdns/
 echo 'CONFIG_PACKAGE_smartdns=y' >> .config
 
-#echo '添加OpenClash'
-#git clone $openClash_url package/lean/luci-app-openclash
-
-#  OpenClash
-#echo 'CONFIG_PACKAGE_luci-app-openclash=y' >> .config
-#echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y'  >> .config
+echo '添加openclash'
+git clone $openClash_url package/lean/luci-app-openclash
+echo 'CONFIG_PACKAGE_luci-app-openclash=y' >> .config
+echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y'  >> .config
 
 #echo '添加Lienol包'
 #git clone $lienol_url package/Lienol
