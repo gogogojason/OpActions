@@ -1,7 +1,7 @@
 # cd $WORK_PATH 目录下,先运行的 public.h -> 设备.h -> scripts/feeds install -a
 # 必须的文件
-# device_name='G-DOCK'      # 设备名，放到了单独设备的sh文件中了
-# wifi_name="OpenWrt"       # Wifi 名字 ,放到了单独设备的sh文件中了
+device_name='MiRouter'      # 设备名，放到了单独设备的sh文件中了
+wifi_name="RMWiFi"       # Wifi 名字 ,放到了单独设备的sh文件中了
 lan_ip='192.168.2.1'        # Lan Ip地址
 utc_name='Asia\/Shanghai'   # 时区
 delete_bootstrap=false       # 是否删除默认主题 true 、false
@@ -38,6 +38,12 @@ sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" packa
 
 echo "修改默认主题"
 sed -i 's/+luci-theme-bootstrap/+luci-theme-argon-light-mod/g' feeds/luci/collections/luci/Makefile
+
+echo "修改机器名称"
+sed -i "s/OpenWrt/$device_name/g" ./package/base-files/files/bin/config_generate
+
+echo "修改wifi名称"
+sed -i "s/OpenWrt/$wifi_name/g" ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 echo '添加主题argon'
 git clone $theme_argon package/lean/luci-theme-argon-mc
