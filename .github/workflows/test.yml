@@ -88,10 +88,10 @@ jobs:
           echo "执行${T_NAME}sh"
           chmod +x ./$T_NAME.sh
           sudo ./$T_NAME.sh
-        fi 
-
+        fi    
+          ./scripts/feeds update -a
+          ./scripts/feeds install -a
         
-
     - name: Download  Package                # 6.下载包
       run: |
         cd $WORK_PATH
