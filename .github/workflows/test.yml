@@ -1,32 +1,32 @@
-# # # # # # # # # # #
-# 自动构建 openWrt G-DOCK
-#     花妆男
-# # # # # # # # # # #
+# # # # # # # # # # # # #
+# 自动编译OpenWrt固件脚本 #
+# # # # # # # # # # # # #
+
 name: OpenWrtAC2100
 on:
-  # schedule:                           # 时间表
-  #   - cron: '0 19 * * *'              # 每天国际时间19点，北京时间凌晨3点执行(北京+8)
-  push:                               # push 操作
-    branches:                         # 分支
-      - master                        # 主分支
-  #   paths:                            # 路径
-  #     - openwrt/*                     # 监听openwrt目录下所有文件的push操作
-    paths:                            # 路径
-      - logs/g-dock.md                    # 监听logs目录下 k2.md 的push操作
-  watch:                              # 监视操作
-    types: started                  # 点击 star 之后
+  # schedule:                                               # 时间表
+  #   - cron: '0 19 * * *'                                  # 每天国际时间19点，北京时间凌晨3点执行(北京+8)
+  push:                                                     # push 操作
+    branches:                                               # 分支
+      - master                                              # 主分支
+  #   paths:                                                # 路径
+  #     - openwrt/*                                         # 监听openwrt目录下所有文件的push操作
+    paths:                                                  # 路径
+      - logs/g-dock.md                                      # 监听logs目录下 k2.md 的push操作
+  watch:                                                    # 监视操作
+    types: started                                          # 点击 star 之后
 env:
-  T_NAME: "RM2100"                     # 设备名字 (op编译慢所以直接单个的编译)
-  BASE_PATH: openwrt                   # 基础目录
-  FEEDS_CONF: feeds.conf.default 
-  PUBLIC_PATH: public                  # 公共目录
-  PUBLIC_SH: public.sh                 # 公共执行文件
-  SSH_ACTIONS: true  
-  UPLOAD_PACKAGES_DIR: true            # 是否导出bin文件
-  UPLOAD_FIRMWARE: true                # 是否导出固件
-  CLONE_URL: https://github.com/coolsnowwolf/lede  # 地址
-  CLONE_BRANCH: master                 # 分支
-  WORK_PATH: opt/openwrt               # 工作目录
+  T_NAME: "RM2100"                                          # 设备名字 (op编译慢所以直接单个的编译)
+  BASE_PATH: openwrt                                        # 基础目录
+  FEEDS_CONF: feeds.conf.default                     
+  PUBLIC_PATH: public                                       # 公共目录
+  PUBLIC_SH: public.sh                                      # 公共执行文件
+  SSH_ACTIONS: true                                         # 使用SSH图形编译 ture or false
+  UPLOAD_PACKAGES_DIR: true                                 # 是否导出bin文件
+  UPLOAD_FIRMWARE: true                                     # 是否导出固件
+  CLONE_URL: https://github.com/coolsnowwolf/lede           # 源码地址
+  CLONE_BRANCH: master                                      # 分支
+  WORK_PATH: opt/openwrt                                    # 工作目录
 
 jobs:
   build:
