@@ -63,8 +63,6 @@ jobs:
       run: |
         cd $WORK_PATH
         git clone https://github.com/tty228/luci-app-serverchan.git packege/lean/luci-app-serverchan
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
         
     - name: Rerun-Update Feeds                   
       run: |
@@ -79,9 +77,7 @@ jobs:
         cd $WORK_PATH
         echo "执行${PUBLIC_SH}"
         chmod +x ./$PUBLIC_SH
-        sudo ./$PUBLIC_SH 
-          ./scripts/feeds update -a
-          ./scripts/feeds install -a                        
+        sudo ./$PUBLIC_SH                       
         
     - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
       run: |
