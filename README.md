@@ -1,28 +1,3 @@
-# GitHub Action 学习实例 - 自动编译 padavan 和 openWrt
-
-## 前言
-
-- 目前本人手上只有这几个设备，所以只测试这几个
-
-  - PSG1218(k2，超频 600，按我的参数编译 16-22 分钟，~7.07mb)
-  - NEWIFI3(新三，按我的参数编译大概 28-35 分钟，~25.5mb，集成了 v2 二进制文件和 frp 所以大)
-  - G-DOCK(竞斗云 2.0，按我的参数编译大概 3 小时 30 分钟，~57mb(ubi 包)。
-  - 编译好的固件最好双清或者 breed，opboot，uboot，清除后刷入，防止修改了配置残余
-  - 有关参数看设备的配置文件、sh文件、padavan或者openwrt对应 public.sh 文件
-
-- 固件按理通用编译，但是还需测试，目前测试了的有，coolsnowwolf(雕大)的 openwrt(还集成了 Lienol 的包和 openclash，在 public.sh 里面)，chongshengB(C 大)的 padavan
-
-- 特别说明，如果不需要编译某个固件删除相应的 yml 文件即可，添加请仔细阅读有关固件的文档
-
-- 如果有啥问题欢迎提交 [Lssues](https://github.com/HuaZhuangNan/actions-build-padavan-openwrt/issues) 反馈或者 TG:[https://t.me/huazhuangnan](https://t.me/huazhuangnan)邮箱：huazhuangnan@foxmail.com
-
-- 历史自编译网盘地址：[https://pan.baidu.com/s/1JM3bcyOBvK6yx\_-B_IaQrA](https://pan.baidu.com/s/1JM3bcyOBvK6yx_-B_IaQrA);提取码：**7a0u**
-
-- 恩山: [https://www.right.com.cn/forum/?567122](https://www.right.com.cn/forum/?567122)
-
-- B 站(有视频): [https://space.bilibili.com/436465779](https://space.bilibili.com/436465779)
-
-- 整理编写不易，喜欢的话右上角给个 **star** 呗，本人主学 WEB，大专，现读大三找实习中，有啥好工作引荐下呗；
 
 ## [openwrt 单独参数及功能说明](/openwrt/readme.md)
 
