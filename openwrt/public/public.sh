@@ -50,24 +50,25 @@ echo 'CONFIG_PACKAGE_smartdns=y' >> .config
 
 echo '添加openclash'
 git clone $openClash_url package/lean/luci-app-openclash
-echo 'CONFIG_PACKAGE_luci-app-openclash=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y'  >> .config
+#echo 'CONFIG_PACKAGE_luci-app-openclash=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y'  >> .config
 
 echo '添加Passwall'
 git clone $passwall_url package/laohu
-echo 'CONFIG_PACKAGE_luci-app-passwall=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y'  >> .config
+#echo 'CONFIG_PACKAGE_luci-app-passwall=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y'  >> .config
+
 
 echo '添加adguardhome'
 git clone $adguardhome_url package/lean/luci-app-adguardhome
-echo 'CONFIG_PACKAGE_luci-app-adguardhome=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y'  >> .config
+#echo 'CONFIG_PACKAGE_luci-app-adguardhome=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y'  >> .config
 
 #echo '添加filebrowser'
 #echo 'CONFIG_PACKAGE_luci-app-filebrowser=y' >> .config
