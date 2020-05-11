@@ -36,9 +36,9 @@ sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" packa
 echo "修改默认主题"
 sed -i 's/+luci-theme-bootstrap/+luci-theme-argon-light-mod/g' feeds/luci/collections/luci/Makefile
 
-echo '添加主题argon'
-git clone $theme_argon package/lean/luci-theme-argon-mc
-echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
+#echo '添加主题argon'
+#git clone $theme_argon package/lean/luci-theme-argon-mc
+#echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
 
 echo '添加luci-app-smartdns'
 git clone -b lede $smartdnsapp_url package/lean/luci-app-smartdns
