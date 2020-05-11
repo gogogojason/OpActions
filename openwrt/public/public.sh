@@ -44,17 +44,17 @@ echo '添加luci-app-smartdns'
 git clone -b lede $smartdnsapp_url package/lean/luci-app-smartdns
 echo 'CONFIG_PACKAGE_luci-app-smartdns=y' >> .config
 
-echo '添加smartdns'
-git clone $smartdns_url feeds/packages/net/smartdns/
-echo 'CONFIG_PACKAGE_smartdns=y' >> .config
+#echo '添加smartdns'
+#git clone $smartdns_url feeds/packages/net/smartdns/
+#echo 'CONFIG_PACKAGE_smartdns=y' >> .config
 
-echo '添加openclash'
-git clone $openClash_url package/lean/luci-app-openclash
+#echo '添加openclash'
+#git clone $openClash_url package/lean/luci-app-openclash
 #echo 'CONFIG_PACKAGE_luci-app-openclash=y' >> .config
 #echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y'  >> .config
 
-echo '添加Passwall'
-git clone $passwall_url package/passwall
+#echo '添加Passwall'
+#git clone $passwall_url package/passwall
 #echo 'CONFIG_PACKAGE_luci-app-passwall=y' >> .config
 #echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y' >> .config
 #echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y' >> .config
