@@ -62,7 +62,7 @@ jobs:
     - name: download others packges                   
       run: |
         cd $WORK_PATH
-        git clone https://github.com/tty228/luci-app-serverchan packege/lean/luci-app-serverchan
+        git clone https://github.com/tty228/luci-app-serverchan.git packege/lean/luci-app-serverchan
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
