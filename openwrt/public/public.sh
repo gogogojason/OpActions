@@ -54,7 +54,7 @@ git clone $openClash_url package/lean/luci-app-openclash
 #echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y'  >> .config
 
 echo '添加Passwall'
-git clone $passwall_url package/laohu
+git clone $passwall_url package/passwall
 #echo 'CONFIG_PACKAGE_luci-app-passwall=y' >> .config
 #echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y' >> .config
 #echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y' >> .config
