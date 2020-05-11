@@ -67,6 +67,7 @@ jobs:
         chmod +x ./$PUBLIC_SH
         sudo ./$PUBLIC_SH                       
         git clone https://github.com/tty228/luci-app-serverchan.git packege/lean/luci-app-serverchan
+        ./scripts/feeds install -a
         
     - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
       run: |
