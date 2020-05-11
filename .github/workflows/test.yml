@@ -66,7 +66,6 @@ jobs:
         echo "执行${PUBLIC_SH}"
         chmod +x ./$PUBLIC_SH
         sudo ./$PUBLIC_SH                       
-        git clone https://github.com/tty228/luci-app-serverchan.git packege/lean/luci-app-serverchan
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
