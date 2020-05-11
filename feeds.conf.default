@@ -5,3 +5,4 @@ src-git helloworld https://github.com/fw876/helloworld
 #src-git passwall https://github.com/hfy166/Lienol-openwrt-packages-backup
 #src-git openappfilter https://github.com/destan19/OpenAppFilter
 src-git otherpackges https://github.com/kenzok8/openwrt-packages
+src-git small https://github.com/kenzok8/small
