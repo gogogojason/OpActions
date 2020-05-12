@@ -4,8 +4,9 @@ device_name='MiRouter'                                                      # �
 wifi_name="RMWiFi"                                                          # 自定义Wifi 名字
 lan_ip='192.168.2.1'                                                        # 自定义Lan Ip地址
 utc_name='Asia\/Shanghai'                                                   # 自定义时区
+ver_name='D200512'                                                          # 版本号
 delete_bootstrap=false                                                      # 是否删除默认主题 true 、false
-default_theme='luci-theme-argon-light-mod'                                  # 默认主题 结合主题文件夹名字
+default_theme='luci-theme-argon_new'                                        # 默认主题 结合主题文件夹名字
 theme_argon='https://github.com/sypopo/luci-theme-argon-mc.git'             # 主题地址
 openClash_url='https://github.com/vernesong/OpenClash.git'                  # OpenClash包地址
 adguardhome_url='https://github.com/rufengsuixing/luci-app-adguardhome.git' # adguardhome 包地址
@@ -34,11 +35,14 @@ echo "修改时区"
 sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" package/base-files/files/bin/config_generate
 
 echo "修改默认主题"
-sed -i 's/+luci-theme-bootstrap/+luci-theme-argon_new/g' feeds/luci/collections/luci/Makefile
+sed -i 's/+luci-theme-bootstrap/+$default_theme/g' feeds/luci/collections/luci/Makefile
 
-echo '添加serverchan'
-git clone $serverchan_url package/luci-app-serverchan
-echo 'CONFIG_PACKAGE_luci-app-serverchan=y' >> .config
+echo "修改作者信息"
+sed -i 's/LuCI Master/HFY166 Ver.$ver_name/LuCI Master/g' /usr/lib/lua/luci/version.lua
+
+#echo '添加serverchan'
+#git clone $serverchan_url package/luci-app-serverchan
+#echo 'CONFIG_PACKAGE_luci-app-serverchan=y' >> .config
 
 
 #echo '添加主题argon'
