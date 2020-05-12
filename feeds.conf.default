@@ -6,4 +6,4 @@ src-git helloworld https://github.com/fw876/helloworld
 src-git OpenAppFilter https://github.com/destan19/OpenAppFilter
 src-git otherpackges https://github.com/kenzok8/openwrt-packages
 src-git small https://github.com/kenzok8/small
-src-git serverchan https://github.com/tty228/luci-app-serverchan
+#src-git serverchan https://github.com/tty228/luci-app-serverchan
