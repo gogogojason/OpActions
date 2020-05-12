@@ -35,10 +35,10 @@ echo "修改时区"
 sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" package/base-files/files/bin/config_generate
 
 echo "修改默认主题"
-sed -i 's/+luci-theme-bootstrap/+$default_theme/g' feeds/luci/collections/luci/Makefile
+sed -i 's/+luci-theme-bootstrap/+luci-theme-argon_new/g' feeds/luci/collections/luci/Makefile
 
 echo "修改作者信息"
-sed -i 's/LuCI Master/HFY166 Ver.$ver_name/LuCI Master/g' /usr/lib/lua/luci/version.lua
+sed -i 's/LuCI Master/HFY166 Ver.$ver_name|LuCI Master/g' /usr/lib/lua/luci/version.lua
 
 #echo '添加serverchan'
 #git clone $serverchan_url package/luci-app-serverchan
