@@ -17,7 +17,7 @@ vssr_plus='https://github.com/Leo-Jo-My/luci-app-vssr-plus.git'             # vs
 filter_url='https://github.com/destan19/OpenAppFilter.git'                  # AppFilter 地址
 smartdns_url='https://github.com/pymumu/openwrt-smartdns'                   # SmartDNS运行程序
 smartdnsapp_url='https://github.com/pymumu/luci-app-smartdns.git'           # SmartDNS-App
-passwall_url='https://github.com/hfy166/Lienol-openwrt-packages-backup'     # Passwall备份包
+serverchan_url='https://github.com/tty228/luci-app-serverchan.git'          # serverchan备份包
 
 #下面是执行具体操作
 
@@ -35,6 +35,11 @@ sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" packa
 
 echo "修改默认主题"
 sed -i 's/+luci-theme-bootstrap/+luci-theme-argon_new/g' feeds/luci/collections/luci/Makefile
+
+echo '添加serverchan'
+git clone $serverchan_url package/luci-app-serverchan
+echo 'CONFIG_PACKAGE_luci-app-serverchan=y' >> .config
+
 
 #echo '添加主题argon'
 #git clone $theme_argon package/lean/luci-theme-argon-mc
