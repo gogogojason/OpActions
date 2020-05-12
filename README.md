@@ -1,44 +1,4 @@
 
-## [openwrt 单独参数及功能说明](/openwrt/readme.md)
-
-## [padavan 单独参数及功能说明](/padavan/readme.md)
-
-## 下载编译完成固件
-
-- [Action 下载](https://github.com/HuaZhuangNan/actions-build-padavan-openwrt/actions)
-- [具体下载图示](./screenshots/readme.md)
-
-## 更新日志
-
-- [PSG1218](./logs/k2.md)
-- [NEWIFI3](./logs/n3.md)
-- [G-DOCK2.0](./logs/g-dock.md)
-
-## 编译方法
-
-- 注：所有固件都是下载的，所以需要编译其他版本的yml去改连接和编译的配置就好
-- **Fork** 到自己仓库后(按需修改配置文件)
-- 需要哪种方式编译，打开 yml 文件里面的注释就好(就是删除#号)
-- 文件打包完会在 action 的任务里面
-
-### 监听文件 `push` 编译（默认编译，需要其他方式，打开注释修改或自己添加就好）
-
-- 选择按log文件默认的原因
-  1. 方便查看管理
-  2. 防止多次的push多次编译
-  3. 防止不是自己点击 star 之后 Actions 还是会有显示
-
-- 编译模板 yml 里面也有例子
-
-```yml
-push:                     # push 操作
-  branches:               # 分支
-    - master              # 主分支
-  # paths:                # 路径
-  #   - padavan/*         # 监听padavan目录下所有文件的push操作
-  paths:                  # 路径
-    - logs/k2.md          # 监听logs目录下 k2.md 的push操作 (默认)
-```
 
 ### 星标 `star` 编译
 
@@ -74,8 +34,6 @@ schedule:                 # 时间表
   |-- screenshots       # 效果目录
 ```
 
-## [编译结果欣赏图](./screenshots/readme.md)
-
 ## Action 常用参数说明
 
 > - name 自动构建的名字
@@ -96,39 +54,3 @@ schedule:                 # 时间表
 >   - user 使用官方的一些库完成一些操作
 >   - run 运行脚本
 >   - id 运行 id
-
-## 参考项目或文章
-
-- [Github Action 官方 Help](https://help.github.com/cn/actions/)
-
-- [Github Action 官方仓库](https://github.com/actions)
-
-- [openwrt 源码](https://github.com/coolsnowwolf/lede) © coolsnowwolf
-
-- [openwrt 构建参考](https://github.com/P3TERX/Actions-OpenWrt) © P3TERX
-
-- [openwrt 构建参考](https://github.com/ljk4160/GDOCK) © ljk4160
-
-- [openwrt 主题](https://github.com/sypopo/luci-theme-argon-mc) © sypopo
-
-- [openwrt-OpenClash](https://github.com/vernesong/OpenClash) © vernesong
-
-- [openwrt-packages 包](https://github.com/Lienol/openwrt-package) © Lienol
-
-- [adguardhome 插件](https://github.com/rufengsuixing/luci-app-adguardhome) © rufengsuixing
-
-- [Hello Word 插件](https://github.com/jerrykuku/luci-app-vssr) © jerrykuku
-
-- [Hello Word 插件修复冲突版](https://github.com/Leo-Jo-My/luci-app-vssr-plus) © Leo-Jo-My
-
-- [OpenAppFilter 插件](https://github.com/destan19/OpenAppFilter) © destan19
-
-- [openwrt 插件配置参考恩山](https://www.right.com.cn/forum/thread-344825-1-1.html) © xtwz
-
-- [padavan 源码](https://github.com/chongshengB/rt-n56u) © chongshengB
-
-- [padavan 构建参考](https://github.com/chongshengB/Padavan-build) © chongshengB
-
-## License
-
-[MIT](./LICENSE) © HuaZhuangNan(花妆男)
