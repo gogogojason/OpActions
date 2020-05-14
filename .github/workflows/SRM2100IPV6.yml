@@ -65,15 +65,20 @@ jobs:
         cd $WORK_PATH
         ./scripts/feeds update -a      
         
-    - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
+    - name: Install public.sh  # 5. 加载配置文件 并且安装 Feeds
       run: |
-        [ -f $BASE_PATH/$T_NAME/banner ] && cp -f $BASE_PATH/$T_NAME/banner $WORK_PATH/package/base-files/files/etc/banner
-        [ -f $BASE_PATH/$T_NAME/.config ] && cp -f $BASE_PATH/$T_NAME/.config $WORK_PATH/.config
-        [ -f $BASE_PATH/$PUBLIC_PATH/$PUBLIC_SH ] && cp -f $BASE_PATH/$PUBLIC_PATH/$PUBLIC_SH $WORK_PATH     
+        [ -f $BASE_PATH/$PUBLIC_PATH/$PUBLIC_SH ] && cp -f $BASE_PATH/$PUBLIC_PATH/$PUBLIC_SH $WORK_PATH
         cd $WORK_PATH
         echo "执行${PUBLIC_SH}"
         chmod +x ./$PUBLIC_SH
         sudo ./$PUBLIC_SH                       
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        
+    - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
+      run: |
+        [ -f $BASE_PATH/$T_NAME/banner ] && cp -f $BASE_PATH/$T_NAME/banner $WORK_PATH/package/base-files/files/etc/banner
+        [ -f $BASE_PATH/$T_NAME/.config ] && cp -f $BASE_PATH/$T_NAME/.config $WORK_PATH/.config                   
         ./scripts/feeds update -a
         ./scripts/feeds install -a
     
